@@ -1,0 +1,29 @@
+// color
+$c_text: #333;
+
+// z-index
+$z_header: 1000;
+
+// font
+$fz_default: 16px;
+$ff_default: "Noto Sans JP", sans-serif;
+$fw_default: 400;
+
+// line-height
+$lh_default: 1.6;
+
+$break_points: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$width_containers: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1164px,
+  xxl: 1164px,
+);

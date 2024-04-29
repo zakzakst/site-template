@@ -1,0 +1,16 @@
+@use "../global" as g;
+@forward "../../../node_modules/reset-css/sass/_reset";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: g.$ff_default;
+  font-size: g.$fz_default;
+  font-weight: g.$fw_default;
+  line-height: g.$lh_default;
+  color: g.$c_text;
+}

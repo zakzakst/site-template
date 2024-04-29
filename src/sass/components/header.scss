@@ -1,0 +1,6 @@
+@use "../global" as g;
+
+.header {
+  position: fixed;
+  z-index: g.$z_header;
+}
