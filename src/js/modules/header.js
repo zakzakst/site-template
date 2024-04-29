@@ -1,5 +1,5 @@
 const headerInit = () => {
-  console.log("header init");
-};
+  console.log('header init')
+}
 
-export default headerInit;
+export default headerInit

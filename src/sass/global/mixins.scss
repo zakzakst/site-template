@@ -1,5 +1,5 @@
-@use "sass:map";
-@use "variables" as v;
+@use 'sass:map';
+@use 'variables' as v;
 
 @mixin Mq($name) {
   @media screen and (min-width: map.get(v.$break_points, $name)) {

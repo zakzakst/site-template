@@ -1,7 +1,31 @@
 {
   "folders": [
     {
-      "path": "./"
-    }
+      "path": "./",
+    },
   ],
+  "settings": {
+    // 設定：stylelint
+    "css.validate": false,
+    "scss.validate": false,
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    // 設定：eslint
+    "javascript.validate.enable": false,
+    "[js]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    },
+
+    // 自動保存を有効化
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true,
+      "source.fixAll.eslint": true,
+    },
+  },
 }

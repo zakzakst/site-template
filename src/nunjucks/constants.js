@@ -5,4 +5,4 @@ exports.CONSTANTS = {
   SHORTCUT_ICON: 'https://domain/path/to/icon',
   APPLE_ICON: 'https://domain/path/to/icon',
   OG_IMAGE: 'https://domain/path/to/image',
-};
+}

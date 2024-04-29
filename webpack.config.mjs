@@ -1,28 +1,28 @@
-import TerserPlugin from "terser-webpack-plugin";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+import TerserPlugin from 'terser-webpack-plugin'
+import { fileURLToPath } from 'node:url'
+import path from 'node:path'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 // const environment = process.env.NODE_ENV || 'development';
-const environment = "production";
+const environment = 'production'
 
 export default {
   entry: {
-    script: "./src/js/script.js",
+    script: './src/js/script.js',
   },
   resolve: {
-    extensions: [".js"],
+    extensions: ['.js'],
   },
   output: {
     path: `${__dirname}/dist/assets/js`,
-    filename: "[name].js",
+    filename: '[name].js',
   },
   mode: environment,
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
       },
     ],
   },
@@ -41,4 +41,4 @@ export default {
       }),
     ],
   },
-};
+}

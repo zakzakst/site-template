@@ -1,6 +1,8 @@
-@use "../global" as g;
+@use '../global' as g;
 
-.header {
+$BLOCK_NAME: '.header';
+
+#{ $BLOCK_NAME } {
   position: fixed;
   z-index: g.$z_header;
 }
