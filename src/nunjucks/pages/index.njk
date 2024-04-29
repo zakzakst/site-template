@@ -15,14 +15,14 @@
       NAME: 'サンプル'
     }
   ],
-  BREADCRUMB: [
+  BREADCRUMB_ITEMS: [
     {
-      PATH: '',
-      NAME: 'トップ'
+      LINK: '',
+      LABEL: 'トップ'
     },
     {
-      PATH: '/sample.html',
-      NAME: 'サンプル'
+      LINK: '/sample.html',
+      LABEL: 'サンプル'
     }
   ]
 } %}
@@ -32,16 +32,19 @@
 {% from 'components/modal.njk' import default as MODAL %}
 {# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
 
-{% block PAGE_HEAD %}
+{# {% block PAGE_HEAD %}
   <!-- ▼▼▼ 読み込みファイル（ページ専用） ▼▼▼ -->
   <link rel="stylesheet" href="/{{ CONSTANTS.SITE_ROOT }}css/sample.css">
   <!-- ▲▲▲ 読み込みファイル（ページ専用） ▲▲▲ -->
-{% endblock %}
+{% endblock %} #}
 
 {% block PAGE_CONTENT %}
   {# ▼▼▼ パンくず ▼▼▼ #}
   {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
   {# ▲▲▲ パンくず ▲▲▲ #}
+  {% raw %}
+    <div id="app"></div>
+  {% endraw %}
 {% endblock %}
 
 {% block FIX_CONTENT %}
@@ -54,8 +57,8 @@
   <!-- ▲▲▲ 固定要素（モーダルなど） ▲▲▲ -->
 {% endblock %}
 
-{% block PAGE_FOOT %}
+{# {% block PAGE_FOOT %}
   <!-- ▼▼▼ 読み込みファイル（ページ専用） ▼▼▼ -->
   <script src="/{{ CONSTANTS.SITE_ROOT }}js/sample.js"></script>
   <!-- ▲▲▲ 読み込みファイル（ページ専用） ▲▲▲ -->
-{% endblock %}
+{% endblock %} #}

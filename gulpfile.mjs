@@ -19,11 +19,10 @@ import { BROWSER_START, BROWSER_RELOAD } from './tasks/browser-sync.mjs'
 task('watchFiles', (done) => {
   watch('./src/nunjucks/**/*.njk', series(NUNJUCKS_BUILD, BROWSER_RELOAD))
   watch('./src/sass/**/*.scss', series(SASS_BUILD, BROWSER_RELOAD))
-  watch('./src/js/**/*.js', series(WEBPACK, BROWSER_RELOAD))
+  watch('./src/js/**/*.{js,vue}', series(WEBPACK, BROWSER_RELOAD))
   done()
 })
 task('default', series(BROWSER_START, 'watchFiles'))
-task('build', series(NUNJUCKS_BUILD, SASS_BUILD, WEBPACK))
 task('nunjucksBuild', series(NUNJUCKS_BUILD))
 task('sassBuild', series(SASS_BUILD))
 task('webpack', series(WEBPACK))

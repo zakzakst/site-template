@@ -1,4 +1,5 @@
 import TerserPlugin from 'terser-webpack-plugin'
+import { VueLoaderPlugin } from 'vue-loader'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 const __filename = fileURLToPath(import.meta.url)
@@ -12,6 +13,9 @@ export default {
   },
   resolve: {
     extensions: ['.js'],
+    alias: {
+      vue$: 'vue/dist/vue.esm-bundler.js',
+    },
   },
   output: {
     path: `${__dirname}/dist/assets/js`,
@@ -21,8 +25,16 @@ export default {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['vue-style-loader', 'css-loader'],
       },
     ],
   },
@@ -41,4 +53,5 @@ export default {
       }),
     ],
   },
+  plugins: [new VueLoaderPlugin()],
 }

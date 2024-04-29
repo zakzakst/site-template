@@ -4,21 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "gulp build",
-    "nunjucksBuild": "gulp nunjucksBuild",
-    "sassBuild": "gulp sassBuild",
-    "webpack": "gulp webpack",
-    "fix": "run-s fix:eslint fix:stylelint fix:prettier",
+    "dev": "gulp",
+    "build": "run-p build:*",
+    "build:nunjucks": "gulp nunjucksBuild",
+    "build:sass": "gulp sassBuild",
+    "build:webpack": "gulp webpack",
+    "fix": "run-s fix:*",
     "fix:stylelint": "stylelint --fix ./src/**/*.{css,scss,sass}",
-    "fix:eslint": "eslint --fix ./src/**/*.js",
-    "fix:prettier": "prettier --write './src/**/*.{js,ts,css,scss,sass}'",
-    "imageMin": "gulp imageMin"
+    "fix:eslint": "eslint --fix ./src/**/*.{js,vue}",
+    "fix:prettier": "prettier --write './src/**/*.{js,ts,css,scss,sass,vue}'",
+    "imagemin": "gulp imageMin"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "reset-css": "^5.0.2"
+    "reset-css": "^5.0.2",
+    "vue": "^3.4.26"
   },
   "devDependencies": {
     "@babel/core": "^7.24.4",
@@ -27,6 +28,7 @@
     "babel-loader": "^9.1.3",
     "browser-sync": "^3.0.2",
     "core-js": "^3.37.0",
+    "css-loader": "^7.1.1",
     "eslint": "^9.1.1",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-webpack-plugin": "^4.1.0",
@@ -56,6 +58,9 @@
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-recommended-scss": "^14.0.0",
     "terser-webpack-plugin": "^5.3.10",
+    "vue-loader": "^17.4.2",
+    "vue-style-loader": "^4.1.3",
+    "vue-template-compiler": "^2.7.16",
     "webpack": "^5.91.0",
     "webpack-stream": "^7.0.0"
   }
