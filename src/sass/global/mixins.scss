@@ -16,7 +16,3 @@
     }
   }
 }
-
-@mixin colorChange() {
-  filter: hue-rotate(var(--current-hue, 0deg));
-}
